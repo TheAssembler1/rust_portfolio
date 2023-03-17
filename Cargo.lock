@@ -530,7 +530,9 @@ dependencies = [
 name = "rust_portfolio"
 version = "0.1.0"
 dependencies = [
+ "gloo-console",
  "material-yew",
+ "wasm-bindgen",
  "yew",
 ]
 

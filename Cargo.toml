@@ -8,3 +8,5 @@ edition = "2021"
 [dependencies]
 yew = { version = "0.20.0", features = ["csr"] }
 material-yew = { version = "0.3", features = ["button", "top-app-bar", "top-app-bar-fixed"] }
+gloo-console = "0.2.3"
+wasm-bindgen = "0.2.84"

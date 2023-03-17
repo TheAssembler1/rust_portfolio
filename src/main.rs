@@ -1,18 +1,13 @@
-use material_yew::MatTopAppBarFixed;
-use material_yew::top_app_bar::MatTopAppBarTitle;
-use material_yew::top_app_bar::MatTopAppBar
-use yew::prelude::*;
+use yew::{ Html, html, function_component };
+
+mod components;
 
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <MatTopAppBarFixed >
-            <MatTopAppBarTitle>
-                {
-                    "Noah Lewis"
-                }
-            </MatTopAppBarTitle>
-        </MatTopAppBarFixed>
+        <div>
+            <components::nav_bar::NavBar />
+        </div>
     }
 }
 
