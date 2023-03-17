@@ -1,18 +1,18 @@
-use material_yew::MatButton;
-use yew::html;
+use material_yew::MatTopAppBarFixed;
+use material_yew::top_app_bar::MatTopAppBarTitle;
+use material_yew::top_app_bar::MatTopAppBar
 use yew::prelude::*;
-
-#[function_component]
-fn NavBar() -> Html {
-    html! {
-        <MatButton label="test" />    
-    }
-}
 
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <NavBar />
+        <MatTopAppBarFixed >
+            <MatTopAppBarTitle>
+                {
+                    "Noah Lewis"
+                }
+            </MatTopAppBarTitle>
+        </MatTopAppBarFixed>
     }
 }
 
