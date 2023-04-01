@@ -1,4 +1,8 @@
- mwc-button {
+body {
+  margin: 0;
+}
+
+mwc-button {
   --mdc-theme-primary: white;
   --mdc-theme-on-primary: white;
   --mdc-button-outline-width: 1px;
