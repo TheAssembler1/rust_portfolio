@@ -1,49 +1,11 @@
-use std::clone::Clone;
-use std::cmp::PartialEq;
-use yew::{function_component, html, Html};
-use yew_router::prelude::use_navigator;
-use yew_router::switch::Switch;
-use yew_router::{BrowserRouter, Routable};
-
 mod components;
+mod route;
 
-#[derive(Clone, Routable, PartialEq)]
-enum Route {
-    #[at("/")]
-    Root,
-    #[at("/blog")]
-    Blog,
-    #[at("/contact-me")]
-    ContactMe,
-    #[not_found]
-    #[at("/404")]
-    NotFound,
-}
-
-fn switch(route: Route) -> Html {
-    let core_html = match route {
-        Route::Root => html! {
-            <components::profile::Profile />
-        },
-        Route::Blog => html! {
-            <components::blog::Blog />
-        },
-        Route::ContactMe => html! {
-            <components::contact_me::ContactMe />
-        },
-        Route::NotFound => html! {
-            <h1>{ "Not Found" }</h1>
-        },
-    };
-
-    html! {
-        <>
-            <components::nav_bar::NavBar />
-            <components::nav_tab::NavTab />
-            { core_html }
-        </>
-    }
-}
+use route::switch;
+use route::Route;
+use yew::{function_component, html, Html};
+use yew_router::switch::Switch;
+use yew_router::BrowserRouter;
 
 #[function_component(App)]
 fn app() -> Html {
@@ -52,12 +14,6 @@ fn app() -> Html {
             <Switch<Route> render={ switch }/>
         </BrowserRouter>
     }
-    /*html! {
-        <div>
-            <components::nav_bar::NavBar />
-            <components::nav_tab::NavTab />
-        </div>
-    }*/
 }
 
 fn main() {
