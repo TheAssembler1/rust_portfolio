@@ -17,5 +17,6 @@ fn app() -> Html {
 }
 
 fn main() {
+    println!("HERE");
     yew::Renderer::<App>::new().render();
 }
